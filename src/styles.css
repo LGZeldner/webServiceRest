@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.grid-padding-x > .cell {
+  /*padding-right: 0.5375rem !important;
+  padding-left: 0.5375rem !important;*/
+}

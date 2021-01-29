@@ -45,7 +45,7 @@ export class PhoneAddComponent implements OnInit {
                              this.addForm.value.year, this.addForm.value.orders,
                              this.addForm.value.camera, this.addForm.value.screen,
         this.edPhone.id);
-      this.phonesService.on_edit_phone(phone);
+      this.phonesService.onEditPhone(phone);
       this.editFlag.emit(false);
     }
     else {
@@ -54,7 +54,7 @@ export class PhoneAddComponent implements OnInit {
         this.addForm.value.year, this.addForm.value.orders,
         this.addForm.value.camera, this.addForm.value.screen);
       console.log(phone);
-      this.phonesService.on_add_phone(phone);
+      this.phonesService.onAddPhone(phone);
       this.router.navigate([`/list`]); /* возвращаемся к списку */
     }
   }

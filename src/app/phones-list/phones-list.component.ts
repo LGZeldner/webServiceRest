@@ -9,24 +9,14 @@ import {PhonesService} from '../shared/services/phones.service';
 export class PhonesListComponent implements OnInit {
   sortType: string;
   sortOrder: number;
-  filterTitle: string;
-  filterArticle: string;
-  filterManufact: string;
   constructor(private phonesService: PhonesService) { }
 
   ngOnInit() {
     this.sortIdUp();
-    this.filterTitle = "";
-    this.filterArticle = "";
-    this.filterManufact = "";
   }
   sortIdUp(){
     this.sortType = "id";
     this.sortOrder = 1;
-  }
-  sortIdDown(){
-    this.sortType = "id";
-    this.sortOrder = 0;
   }
   sortPriceUp(){
     this.sortType = "price";

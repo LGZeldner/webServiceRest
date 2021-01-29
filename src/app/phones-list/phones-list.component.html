@@ -4,16 +4,7 @@
     <h4>Сортировать по: </h4>
     <div class="grid-x grid-margin-x">
     <div class="cell shrink">
-      <span class="label">id</span>
-    </div>
-      <div class="cell small-1">
-        <div class="button-group">
-          <button class="button small" (click)="sortIdUp()">^</button>
-          <button class="button small" (click)="sortIdDown()">v</button>
-        </div>
-      </div>
-    <div class="cell shrink">
-      <span class="label">Цене</span>
+      <span class="label secondary">Цене</span>
     </div>
       <div class="cell small-1">
         <div class="button-group">
@@ -22,7 +13,7 @@
         </div>
       </div>
       <div class="cell shrink">
-        <span class="label">Количеству заказов</span>
+        <span class="label secondary">Количеству заказов</span>
       </div>
       <div class="cell small-1">
         <div class="button-group">
@@ -31,34 +22,27 @@
         </div>
       </div>
     </div>
-    <h4>Фильтровать по: </h4>
-    <div class="grid-x grid-padding-x">
-      <div class="cell medium-3">
-        <label>
-          Названию
-          <input type="text" [(ngModel)]="filterTitle">
-        </label>
-      </div>
-      <div class="cell medium-3">
-        <label>
-          Артикулу
-          <input type="text" [(ngModel)]="filterArticle">
-        </label>
-      </div>
-      <div class="cell medium-3">
-        <label>
-          Производителю
-          <input type="text" [(ngModel)]="filterManufact">
-        </label>
-      </div>
-    </div>
   </div>
 </div>
-
+<div class="callout secondary">
+  <div class="grid-x grid-margin-x">
+    <div class="cell shrink">Id</div>
+    <div class="cell auto">Название</div>
+    <div class="cell small-1">Артикул</div>
+    <div class="cell small-1">Цена</div>
+    <div class="cell shrink">Производитель</div>
+    <div class="cell small-1">Год</div>
+    <div class="cell small-1">Заказы</div>
+    <div class="cell small-1">Заказать
+    </div>
+    <div class="cell small-1">Камера</div>
+    <div class="cell small-3">Разрешение экрана</div>
+  </div>
+</div>
 <div class="grid-container">
-  <app-phone-view *ngFor="let phone of phonesService.phones | sortPhones:sortType:sortOrder | filterPhonesTitles:filterTitle | filterPhonesArticle:filterArticle | filterPhonesManufact:filterManufact"
+  <app-phone-view *ngFor="let phone of phonesService.phones | sortPhones:sortType:sortOrder"
                  [inPhone]="phone"
-                 (delPhone)="phonesService.on_del_phone($event)" >
+                 (delPhone)="phonesService.onDelPhone($event)" >
   </app-phone-view>
 </div>
 

@@ -9,13 +9,12 @@ import {PhonesApiService} from "./phones-api.service";
 export class PhonesService implements OnInit {
   public phones: any;
   constructor(private phonesApiService: PhonesApiService) {
-    this.get_phones();
-
+    this.getPhones();
   }
   ngOnInit() {
 
   }
-  async get_phones () {
+  async getPhones () {
     try {
       let gphones = this.phonesApiService.getPhones();
       this.phones = (isNullOrUndefined(await gphones)) ? [] : await gphones;
@@ -25,7 +24,7 @@ export class PhonesService implements OnInit {
     }
   }
 
-  async on_add_phone (phone: Phone) {
+  async onAddPhone (phone: Phone) {
     phone.id = (this.phones.length)
       ? this.phones[this.phones.length - 1].id + 1
       : 1;
@@ -39,25 +38,25 @@ export class PhonesService implements OnInit {
       console.error(e);
     }
   }
-  async on_edit_phone (ed_phone: Phone) {
-    this.phones.splice (
-      this.phones.findIndex (phone => {phone.id === ed_phone.id}),
-      1, ed_phone);
+  async onEditPhone (editPhone: Phone) {
+    let editId = this.phones.findIndex ((element, index, array) => {
+      return (element.id === editPhone.id)});
+    this.phones[editId] = editPhone;
     try {
-      await this.phonesApiService.putPhones(ed_phone.id, {
-        title: ed_phone.title, article: ed_phone.article, price: ed_phone.price, manufact: ed_phone.manufact,
-        year: ed_phone.year, orders: ed_phone.orders, camera: ed_phone.camera, screen: ed_phone.screen});
+      await this.phonesApiService.putPhones(editPhone.id, {
+        title: editPhone.title, article: editPhone.article, price: editPhone.price, manufact: editPhone.manufact,
+        year: editPhone.year, orders: editPhone.orders, camera: editPhone.camera, screen: editPhone.screen});
     }
     catch (e) {
       console.error(e);
     }
   }
-  async on_del_phone (del_phone_id: number) {
+  async onDelPhone (delPhoneId: number) {
     this.phones.splice(this.phones.indexOf(this.phones.find((element, index, array) => {
-      return (element.id === del_phone_id)
+      return (element.id === delPhoneId)
     })), 1); /* удалили из массива элемент */
     try {
-      await this.phonesApiService.deletePhones(del_phone_id);
+      await this.phonesApiService.deletePhones(delPhoneId);
     }
     catch (e) {
       console.error(e);

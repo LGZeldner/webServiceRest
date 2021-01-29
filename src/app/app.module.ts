@@ -12,9 +12,7 @@ import { PhoneViewComponent } from './phone-view/phone-view.component';
 import { PhoneAddComponent } from './phone-add/phone-add.component';
 import { PhonesListComponent } from './phones-list/phones-list.component';
 import { SortPhonesPipe } from './shared/pipes/sort-phones.pipe';
-import { FilterPhonesTitlesPipe } from './shared/pipes/filter-phones-titles.pipe';
-import { FilterPhonesArticlePipe } from './shared/pipes/filter-phones-article.pipe';
-import { FilterPhonesManufactPipe } from './shared/pipes/filter-phones-manufact.pipe';
+import { PhoneCameraMpxPipe } from './shared/pipes/phone-camera-mpx.pipe';
 
 @NgModule({
   declarations: [
@@ -25,9 +23,7 @@ import { FilterPhonesManufactPipe } from './shared/pipes/filter-phones-manufact.
     PhoneAddComponent,
     PhonesListComponent,
     SortPhonesPipe,
-    FilterPhonesTitlesPipe,
-    FilterPhonesArticlePipe,
-    FilterPhonesManufactPipe
+    PhoneCameraMpxPipe
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
 
 <div class="grid-x grid-margin-x">
-  <div class="cell small-1">{{inPhone.id}}</div>
-  <div class="cell small-1">{{inPhone.title}}</div>
+  <div class="cell shrink">{{inPhone.id}}</div>
+  <div class="cell auto">{{inPhone.title}}</div>
   <div class="cell small-1">{{inPhone.article}}</div>
   <div class="cell small-1">{{inPhone.price}}</div>
-  <div class="cell small-1">{{inPhone.manufact}}</div>
+  <div class="cell auto">{{inPhone.manufact}}</div>
   <div class="cell small-1">{{inPhone.year}}</div>
   <div class="cell small-1">{{inPhone.orders}}</div>
   <div class="cell small-1">
     <a class="button" (click)="ordersUp()">+</a>
   </div>
-  <div class="cell small-1">{{inPhone.camera}}</div>
+  <div class="cell small-1">{{inPhone.camera | phoneCameraMpx}}</div>
   <div class="cell small-1">{{inPhone.screen}}</div>
   <div class="cell small-2 small button-group no-gaps">
     <a class="button" (click)="editFlag=!editFlag">Edit</a>

@@ -1,51 +1,55 @@
-<form [formGroup]="addForm" (ngSubmit)="onSave()">
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
+<div class="callout">
+  <form [formGroup]="addForm" (ngSubmit)="onSave()">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x ">
 
-      <div class="small-2 cell">
-        <label>Название
-          <input type="text" formControlName="title" placeholder="passport">
-        </label>
-      </div>
-      <div class="small-1 cell">
-        <label>Артикул
-          <input type="text" formControlName="article" placeholder="70234">
-        </label>
-      </div>
-      <div class="small-1 cell">
-        <label>Цена
-          <input type="text" formControlName="price" placeholder="100">
-        </label>
-      </div>
-      <div class="small-2 cell">
-        <label>Производитель
-          <input type="text" formControlName="manufact" placeholder="sony">
-        </label>
-      </div>
-      <div class="small-1 cell">
-        <label>Год
-          <input type="text" formControlName="year" placeholder="2010">
-        </label>
-      </div>
-      <div class="small-1 cell">
-        <label>Заказы
-          <input type="text" formControlName="orders" placeholder="0">
-        </label>
-      </div>
-      <div class="small-1 cell">
-        <label>Камера
-          <input type="text" formControlName="camera" placeholder="1">
-        </label>
-      </div>
-      <div class="small-2 cell">
-        <label>Разрешение экрана
-          <input type="text" formControlName="screen" placeholder="100">
-        </label>
-      </div>
-      <div class="cell shrink align-self-bottom">
-        <button type="submit" [disabled]="addForm.invalid" class="success button">Save</button>
+        <div class="small-2 cell">
+          <label>Название
+            <input type="text" formControlName="title" placeholder="passport">
+          </label>
+        </div>
+        <div class="small-1 cell">
+          <label>Артикул
+            <input type="text" formControlName="article" placeholder="70234">
+          </label>
+        </div>
+        <div class="small-1 cell">
+          <label>Цена
+            <input type="number" formControlName="price" placeholder="100">
+          </label>
+        </div>
+        <div class="auto cell">
+          <label>Производитель
+            <input type="text" formControlName="manufact" placeholder="sony">
+          </label>
+        </div>
+        <div class="small-1 cell">
+          <label>Год
+            <input type="text" formControlName="year" placeholder="2010">
+          </label>
+        </div>
+        <div class="auto cell">
+          <label>Кол-во заказов
+            <input type="number" formControlName="orders" placeholder="0" >
+          </label>
+
+        </div>
+        <div class="small-1 cell">
+          <label>Камера
+            <input type="text" formControlName="camera" placeholder="1" aria-describedby="cameraHelpText">
+          </label>
+          <p class="help-text" id="cameraHelpText">mpx</p>
+        </div>
+        <div class="small-2 cell">
+          <label>Разрешение экрана
+            <input type="text" formControlName="screen" placeholder="100">
+          </label>
+        </div>
+        <div class="cell shrink align-self-middle">
+          <button type="submit" [disabled]="addForm.invalid" class="success button">Save</button>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 

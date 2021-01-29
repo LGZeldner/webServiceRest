@@ -28,7 +28,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 
 // опишем стуктуру хранящихся в бд данных
 
-const Phones = sequelize.define("phones", {
+const Products = sequelize.define("products", {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,

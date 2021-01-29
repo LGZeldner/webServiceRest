@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {PhonesService} from '../shared/services/phones.service';
+import {ProductsService} from '../shared/services/products.service';
 
 @Component({
-  selector: 'app-phones-list',
-  templateUrl: './phones-list.component.html',
-  styleUrls: ['./phones-list.component.css']
+  selector: 'app-products-list',
+  templateUrl: './products-list.component.html',
+  styleUrls: ['./products-list.component.css']
 })
-export class PhonesListComponent implements OnInit {
+export class ProductsListComponent implements OnInit {
   sortType: string;
   sortOrder: number;
-  constructor(private phonesService: PhonesService) { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
     this.sortIdUp();

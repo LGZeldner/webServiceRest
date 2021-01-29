@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'phoneCameraMpx'
+  name: 'productCameraMpx'
 })
-export class PhoneCameraMpxPipe implements PipeTransform {
+export class ProductCameraMpxPipe implements PipeTransform {
 
   transform(camera: string): string {
     return camera + " mpx";

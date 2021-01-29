@@ -1,0 +1,20 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell shrink">{{inProduct.id}}</div>
+  <div class="cell auto">{{inProduct.title}}</div>
+  <div class="cell small-1">{{inProduct.article}}</div>
+  <div class="cell small-1">{{inProduct.price}}</div>
+  <div class="cell auto">{{inProduct.manufact}}</div>
+  <div class="cell small-1">{{inProduct.year}}</div>
+  <div class="cell small-1">{{inProduct.orders}}</div>
+  <div class="cell small-1">
+    <a class="button" (click)="ordersUp()">+</a>
+  </div>
+  <div class="cell small-1">{{inProduct.camera | productCameraMpx}}</div>
+  <div class="cell small-1">{{inProduct.screen}}</div>
+  <div class="cell small-2 small button-group no-gaps">
+    <a class="button" (click)="editFlag=!editFlag">Edit</a>
+    <a class="alert button" (click)="onDelProduct()">Delete</a>
+  </div>
+</div>
+<app-product-add *ngIf="editFlag" [edProduct]="inProduct" (editFlag)="editFlag=$event"></app-product-add>
+<hr>

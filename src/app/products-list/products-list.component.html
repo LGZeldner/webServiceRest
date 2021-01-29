@@ -40,9 +40,9 @@
   </div>
 </div>
 <div class="grid-container">
-  <app-phone-view *ngFor="let phone of phonesService.phones | sortPhones:sortType:sortOrder"
-                 [inPhone]="phone"
-                 (delPhone)="phonesService.onDelPhone($event)" >
-  </app-phone-view>
+  <app-product-view *ngFor="let product of productsService.products | sortProducts:sortType:sortOrder"
+                 [inProduct]="product"
+                 (delProduct)="productsService.onDelProduct($event)" >
+  </app-product-view>
 </div>
 

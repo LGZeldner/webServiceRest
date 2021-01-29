@@ -8,5 +8,4 @@ export class PhoneCameraMpxPipe implements PipeTransform {
   transform(camera: string): string {
     return camera + " mpx";
   }
-
 }

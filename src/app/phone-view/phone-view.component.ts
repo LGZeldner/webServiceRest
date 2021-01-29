@@ -17,7 +17,6 @@ export class PhoneViewComponent implements OnInit {
 
   ngOnInit() {
   }
-
   onDelPhone () {
     this.delPhone.emit(this.inPhone.id);
   }

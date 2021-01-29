@@ -5,6 +5,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+/* методы для таблицы phones */
 export class PhonesApiService extends DbapiService {
   header: HttpHeaders;
   url = 'phones';

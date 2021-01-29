@@ -23,5 +23,4 @@ export class SortPhonesPipe implements PipeTransform {
     }
     return phones;
   }
-
 }

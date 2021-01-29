@@ -1,4 +1,5 @@
-export class Phone { /* класс, описывающий телефон */
+/* класс, описывающий телефон */
+export class Phone {
   public id: number; /* id */
   public title: string; /* название */
   public article: string; /* артикул */

@@ -1,0 +1,40 @@
+{
+  "phones": [
+    {
+      "title": "passport",
+      "article": "22222",
+      "price": "20000",
+      "manufact": "blackberry",
+      "year": "2015",
+      "orders": 4,
+      "camera": "2",
+      "screen": "2000",
+      "id": 2
+    },
+    {
+      "title": "nokia 3000",
+      "article": "70236",
+      "price": 100,
+      "manufact": "nokia",
+      "year": "2010",
+      "orders": 4,
+      "camera": "6",
+      "screen": "100",
+      "id": 3
+    },
+    {
+      "title": "xiaomi 712",
+      "article": "45876",
+      "price": 1000,
+      "manufact": "xiaomi",
+      "year": "2013",
+      "orders": 6,
+      "camera": "3",
+      "screen": "1500",
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

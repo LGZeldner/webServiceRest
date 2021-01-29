@@ -6,6 +6,7 @@ import {PhonesApiService} from "./phones-api.service";
 @Injectable({
   providedIn: 'root'
 })
+/* Методы для работы с массивом строк из таблицы phones, используется модель Phone */
 export class PhonesService implements OnInit {
   public phones: any;
   constructor(private phonesApiService: PhonesApiService) {

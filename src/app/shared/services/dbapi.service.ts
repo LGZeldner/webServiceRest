@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
+/* методы для обмена информацией с сервером */
 export class DbapiService {
   private baseUrl = "http://localhost:3000/";
 

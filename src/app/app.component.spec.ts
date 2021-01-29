@@ -33,3 +33,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('zeldner1816 app is running!');
   });
 });
+
+
+

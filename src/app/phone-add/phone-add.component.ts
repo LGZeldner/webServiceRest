@@ -58,5 +58,4 @@ export class PhoneAddComponent implements OnInit {
       this.router.navigate([`/list`]); /* возвращаемся к списку */
     }
   }
-
 }

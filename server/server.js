@@ -74,3 +74,79 @@ sequelize.sync().then(result=>{
   console.log(result);
 })
   .catch(err=> console.log(err));
+
+app.listen(PORT, () => {
+  console.log(`Сервер запущен по адресу http://localhost:${PORT}`)
+});
+// получение всех продуктов
+app.get("/api/products", async (req, res) => {
+  try {
+    let result = await Products.findAll();
+    res.send(result)
+  }
+  catch (e) {
+    console.error(e);
+    res.status(500).send({
+      message: "Error: could not get all products"
+    })
+  }
+});
+// получение продукта по id
+app.get("/api/products/:id", async (req, res) => {
+  try {
+    let result = await Products.findAll({
+      where: { product_id: req.params.id }
+    });
+    res.send(result)
+  }
+  catch (e) {
+    console.error(e);
+    res.status(500).send({
+      message: "Error: could not get product"
+    })
+  }
+});
+
+// удаление продукта по id
+app.delete("/api/delete/product/:id", async (req, res) => {
+  try {
+    let result = await Products.destroy({
+      where: {
+        id: req.params.id,
+      }
+    });
+    res.send(result.status)
+  }
+  catch (e) {
+    console.error(e);
+    res.status(500).send({
+      message: "Error: could not delete product"
+    })
+  }
+});
+// редактирование продукта
+app.put("/api/edit/product", async (req, res) => {
+  try {
+    let result = await Products.update({
+      title: req.body.title,
+      article: req.body.article,
+      price: req.body.price,
+      manufact: req.body.manufact,
+      year: req.body.year,
+      orders: req.body.orders,
+      camera: req.body.camera,
+      screen: req.body.screen
+    }, {
+      where: {
+        id: req.body.id,
+      }
+    });
+    res.send(result)
+  }
+  catch (e) {
+    console.error(e);
+    res.status(500).send({
+      message: "Error: could not update product"
+    })
+  }
+});
